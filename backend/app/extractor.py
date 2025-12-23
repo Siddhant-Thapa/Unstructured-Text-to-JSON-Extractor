@@ -64,8 +64,7 @@ Text:
 
     response.raise_for_status()
 
-    # return response.json()["choices"][0]["message"]["content"]
     raw_content = response.json()["choices"][0]["message"]["content"]
-    print("LLM RAW OUTPUT:\n", raw_content)
+    # print("LLM RAW OUTPUT:\n", raw_content)
 
     return raw_content
