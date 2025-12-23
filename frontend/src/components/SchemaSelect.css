@@ -1,0 +1,50 @@
+/* SchemaSelect.css */
+
+.schema-select-container {
+  margin-bottom: 24px;
+}
+
+.schema-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.schema-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  color: #e0e0e0;
+  background: #252525;
+  border: 2px solid #3a3a3a;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300ff87' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 45px;
+}
+
+.schema-select:hover {
+  border-color: #00ff87;
+  background: #2a2a2a;
+}
+
+.schema-select:focus {
+  outline: none;
+  border-color: #00ff87;
+  background: #2a2a2a;
+  box-shadow: 0 0 0 3px rgba(0, 255, 135, 0.15);
+}
+
+.schema-select option {
+  padding: 10px;
+  background: #252525;
+  color: #e0e0e0;
+}

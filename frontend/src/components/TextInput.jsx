@@ -1,12 +1,15 @@
+import "./TextInput.css";
+
 function TextInput({ value, onChange }) {
   return (
-    <div>
-      <label>Input Text</label>
+    <div className="text-input-container">
+      <label className="text-input-label">Input Text</label>
       <textarea
+        className="text-input-textarea"
         rows="6"
-        style={{ width: "100%" }}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        placeholder="Paste your unstructured text here (email, invoice, job description, etc.)..."
       />
     </div>
   );

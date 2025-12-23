@@ -4,6 +4,7 @@ import SchemaSelect from "./components/SchemaSelect";
 import TextInput from "./components/TextInput";
 import JsonView from "./components/JsonView";
 import TableView from "./components/TableView";
+import "./App.css";
 
 function App() {
   const [schemaType, setSchemaType] = useState("contact_info");
@@ -16,8 +17,6 @@ function App() {
     setLoading(true);
     setError(null);
 
-    // console.log("Sending schema:", schemaType);
-
     try {
       const response = await extractData(schemaType, inputText);
       setResult(response.data);
@@ -29,24 +28,38 @@ function App() {
   }
 
   return (
-    <div style={{ padding: "24px", maxWidth: "900px", margin: "0 auto" }}>
-      <h2>Unstructured Text to JSON Extractor</h2>
+    <div className="app-container">
+      <div className="app-wrapper">
+        <div className="app-card">
+          <div className="app-header">
+            <h1 className="app-title">Unstructured Text to JSON Extractor</h1>
+            <p className="app-subtitle">
+              Transform messy text into structured data instantly
+            </p>
+          </div>
 
-      <SchemaSelect value={schemaType} onChange={setSchemaType} />
-      <TextInput value={inputText} onChange={setInputText} />
+          <SchemaSelect value={schemaType} onChange={setSchemaType} />
+          <TextInput value={inputText} onChange={setInputText} />
 
-      <button onClick={handleExtract} disabled={loading}>
-        {loading ? "Extracting..." : "Extract"}
-      </button>
+          <button
+            className="extract-button"
+            onClick={handleExtract}
+            disabled={loading || !inputText.trim()}
+          >
+            {loading && <span className="spinner"></span>}
+            {loading ? "Extracting..." : "Extract Data"}
+          </button>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <div className="error-message">{error}</div>}
 
-      {result && (
-        <>
-          <JsonView data={result} />
-          <TableView data={result} />
-        </>
-      )}
+          {result && (
+            <div className="results-section fade-in">
+              <JsonView data={result} />
+              <TableView data={result} />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,93 @@
+/* TableView.css */
+
+.table-view-container {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a2a;
+}
+
+.table-view-header {
+  background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+  padding: 20px 24px;
+}
+
+.table-view-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-view-icon {
+  width: 24px;
+  height: 24px;
+  color: #000000;
+}
+
+.table-view-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-view-row {
+  border-bottom: 1px solid #2a2a2a;
+  transition: background-color 0.2s ease;
+}
+
+.table-view-row:last-child {
+  border-bottom: none;
+}
+
+.table-view-row:hover {
+  background-color: #222222;
+}
+
+.table-view-key {
+  font-weight: 600;
+  color: #ffffff;
+  width: 35%;
+  padding: 16px 24px;
+  vertical-align: top;
+  text-transform: capitalize;
+  background: #252525;
+}
+
+.table-view-value {
+  color: #d0d0d0;
+  padding: 16px 24px;
+  line-height: 1.6;
+}
+
+.table-view-na {
+  color: #6a6a6a;
+  font-style: italic;
+}
+
+.table-view-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.table-view-list-item {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 8px;
+}
+
+.table-view-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.table-view-list-item::before {
+  content: "→";
+  color: #00ff87;
+  font-weight: bold;
+  position: absolute;
+  left: -20px;
+}
