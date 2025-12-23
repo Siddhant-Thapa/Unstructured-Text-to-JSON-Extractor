@@ -7,8 +7,9 @@ app = FastAPI(title="Unstructured Text to JSON Extractor")
 # enabling CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173"
+     allow_origins=[
+        "http://localhost:5173",               # local development
+        "https://text-to-json-frontend.vercel.app"  # production frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
