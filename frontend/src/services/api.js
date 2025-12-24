@@ -1,4 +1,5 @@
-const API_URL = "http://127.0.0.1:8000/extract";
+// const API_URL = "http://127.0.0.1:8000/extract";
+const API_URL = "https://text-to-json-extractor-backend.onrender.com/extract";
 
 export async function extractData(schemaType, inputText) {
   const response = await fetch(API_URL, {
