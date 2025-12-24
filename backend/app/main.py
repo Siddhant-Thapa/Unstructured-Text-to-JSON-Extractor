@@ -9,7 +9,7 @@ app.add_middleware(
     CORSMiddleware,
      allow_origins=[
         "http://localhost:5173",               # local development
-        "https://text-to-json-frontend.vercel.app"  # production frontend
+        "https://text-to-json-frontend-final.vercel.app/"  # production frontend  https://text-to-json-frontend-final.vercel.app/
     ],
     allow_credentials=True,
     allow_methods=["*"],
